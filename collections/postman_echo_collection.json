@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5e2d12f2-199e-408e-86fd-96552c49aa60",
+		"_postman_id": "4901c502-8b27-465f-865a-0ba10a58fc29",
 		"name": "Postman Echo",
 		"description": "Postman Echo is service you can use to test your REST clients and make sample API calls. It provides endpoints for `GET`, `POST`, `PUT`, various auth mechanisms and other utility endpoints.\n\nThe documentation for the endpoints as well as example responses can be found at [https://postman-echo.com](https://postman-echo.com/?source=echo-collection-app-onboarding)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e99e8475-de72-466f-8e51-16036647dcb2",
+								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"response is ok\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -26,7 +26,7 @@
 									"        .and.have.jsonBody('args.foo2', 'bar2');",
 									"});"
 								],
-								"type": "text/javascript"
+								"id": "735a507c-9e96-4b6f-8dd2-be8f29166554"
 							}
 						}
 					],
@@ -147,7 +147,7 @@
 									"        'This is expected to be sent back as part of response body.');",
 									"});"
 								],
-								"id": "29372ad1-e44f-4c7b-99e4-05d84406f245"
+								"id": "7c9d4583-7143-4f0e-ba20-eb945d4c56e5"
 							}
 						}
 					],
@@ -190,7 +190,7 @@
 									"        .and.have.jsonBody('form.foo2', 'bar2');",
 									"});"
 								],
-								"id": "d8ab240c-0a7e-41cb-b1ba-8c529376ae67"
+								"id": "2f385d09-7fb2-41a4-a906-65553c8c9dc7"
 							}
 						}
 					],
@@ -244,7 +244,7 @@
 									"        'This is expected to be sent back as part of response body.');",
 									"});"
 								],
-								"id": "309b0381-4579-48e5-a261-18937e68d217"
+								"id": "9bce1f56-997c-42ff-a623-8b842f1d0e71"
 							}
 						}
 					],
@@ -287,7 +287,7 @@
 									"        'This is expected to be sent back as part of response body.');",
 									"});"
 								],
-								"id": "ad26ad8f-76bb-449a-8ca3-abefef6f2e43"
+								"id": "22814cec-eb5e-433d-b0b7-746737d774e0"
 							}
 						}
 					],
@@ -330,7 +330,7 @@
 									"        'This is expected to be sent back as part of response body.');",
 									"});"
 								],
-								"id": "ca3a3052-cf45-4bdc-907a-89078e65e77f"
+								"id": "096a7ec3-1121-423b-bf11-37169878cf50"
 							}
 						}
 					],
@@ -382,7 +382,7 @@
 									"    pm.response.to.have.jsonBody('headers.my-sample-header', 'Lorem ipsum dolor sit amet');",
 									"});"
 								],
-								"id": "fcd2b0da-fd32-4978-ae9a-6233ccfc6922"
+								"id": "d5e11e99-253c-4f99-aa41-6cdcd05f38d2"
 							}
 						}
 					],
@@ -547,7 +547,7 @@
 									"        .and.have.jsonBody('foo2', 'bar2');",
 									"});"
 								],
-								"id": "b277f10a-fd24-4f00-999b-26930503f460"
+								"id": "5c4726c9-7d0a-4b85-8327-da44f96f75cc"
 							}
 						}
 					],
@@ -729,7 +729,7 @@
 									"    pm.response.to.have.jsonBody('authenticated', true);",
 									"});"
 								],
-								"id": "fe60239e-0266-4a9f-b6eb-1730e80664e0"
+								"id": "1314b031-aacc-4f63-8014-577c9be2a346"
 							}
 						}
 					],
@@ -871,7 +871,7 @@
 									"tests[\"response code is 200\"] = responseCode.code === 200;",
 									"tests[\"body contains authenticated\"] = responseBody.has(\"authenticated\");"
 								],
-								"id": "31a9144c-6572-4551-b498-3e8a6a738a9c"
+								"id": "c5b5d251-05ed-4c29-9306-dc20afc158f7"
 							}
 						}
 					],
@@ -1038,227 +1038,6 @@
 					]
 				},
 				{
-					"name": "Hawk Auth",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"response is ok\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"response body has json saying passed 'status'\", function () {",
-									"    pm.response.to.have.jsonBody('status', 'pass');",
-									"});"
-								],
-								"id": "48737adc-50ad-4f81-ac90-213a6294c905"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "hawk",
-							"hawk": [
-								{
-									"key": "authId",
-									"value": "dh37fgj492je",
-									"type": "string"
-								},
-								{
-									"key": "authKey",
-									"value": "werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn",
-									"type": "string"
-								},
-								{
-									"key": "algorithm",
-									"value": "sha256",
-									"type": "string"
-								},
-								{
-									"key": "user",
-									"value": "",
-									"type": "string"
-								},
-								{
-									"key": "nonce",
-									"value": "RZKGNz",
-									"type": "string"
-								},
-								{
-									"key": "timestamp",
-									"value": "",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://postman-echo.com/auth/hawk",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"auth",
-								"hawk"
-							]
-						},
-						"description": "This endpoint is a Hawk Authentication protected endpoint. [Hawk authentication](https://github.com/hueniverse/hawk) is a widely used protocol for protecting API endpoints. One of Hawk's main goals is to enable HTTP authentication for services that do not use TLS (although it can be used in conjunction with TLS as well).\n\nIn order to use this endpoint, select the \"Hawk Auth\" helper inside Postman, and set the following values:\n\nHawk Auth ID: `dh37fgj492je`\n\nHawk Auth Key: `werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn`\n\nAlgorithm: `sha256`\n\nThe rest of the values are optional, and can be left blank. Hitting send should give you a response with a status code of 200 OK."
-					},
-					"response": [
-						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"name": "Authorization",
-										"value": "Hawk id=\"dh37fgj492je\", ts=\"1459422734\", nonce=\"XiwiCU\", mac=\"KzMHk67BYCC9zZqRy5hRdWFEFLHX5bNlRWGdmOAWKp0=\""
-									}
-								],
-								"url": {
-									"raw": "https://echo.getpostman.com/auth/hawk",
-									"protocol": "https",
-									"host": [
-										"echo",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"auth",
-										"hawk"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "javascript",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "",
-									"name": "Access-Control-Allow-Credentials",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "",
-									"name": "Access-Control-Allow-Headers",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "",
-									"name": "Access-Control-Allow-Methods",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "",
-									"name": "Access-Control-Allow-Origin",
-									"description": ""
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": ""
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": ""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": ""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 31 Mar 2016 11:12:16 GMT",
-									"name": "Date",
-									"description": ""
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.6.2",
-									"name": "Server",
-									"description": ""
-								},
-								{
-									"key": "Server-Authorization",
-									"value": "Hawk mac=\"vRrUzDdcHu2NaNts/r4zg2xmXMdX8wPiTGTM398BDRg=\", hash=\"qmtflETMybaZiOQ2dLT17yiRunFT5OCIxZRZ0boQaiE=\"",
-									"name": "Server-Authorization",
-									"description": ""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": ""
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "Sails <sailsjs.org>",
-									"name": "X-Powered-By",
-									"description": ""
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked",
-									"name": "transfer-encoding",
-									"description": ""
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date",
-									"hostOnly": false,
-									"httpOnly": false,
-									"domain": ".getpostman.com",
-									"path": "/",
-									"secure": false,
-									"session": false,
-									"value": "yes",
-									"key": "getpostmanlogin"
-								},
-								{
-									"expires": "Invalid Date",
-									"hostOnly": false,
-									"httpOnly": false,
-									"domain": ".getpostman.com",
-									"path": "/",
-									"secure": false,
-									"session": false,
-									"value": "9f887f3b7f14b8c29ac4dc4109381b0b89a76e785c7b34251d6c8025b41b24013d2aa49f40e2deac19cbf0594dd984169455534d91ff98d4d1868d67ac857017629f137926e3a04a616bb83a2fb5ab9e6cbea9579ed5d5c1155d47545d72aad5be99f4abd0a7130805b3807d70cd507171dbe9d950d8e35a853f9ec075f5a767c95df4d57f7d521b66605b3bda3801700e26e651d1129c798b729ee3b91702d43ae64ab226c3f426893753def772c15442a7552dc84a3c773d6099a50b0a6af940b64c8176fedfcecd5fc31ccfc3bbc0124bfdaa0d62e4252d4aafb46a3c10963d12391e1fa97a1c0f19a636f57a3ac8cc35567d1cb6cb53b77f8adde3f6754a765596d7d00bdeb9acb5cc8d115e7c3f50ec3228e34d3e6c7464e9039b01868e03d10e9f87772397602453e9e91205de7b86021fad06eb26e69298e99ff1597a670faeb310f8c092041d544851de84f2bee89a92123da6eea286210524035c85361e2af42166a6",
-									"key": "postman.sid"
-								},
-								{
-									"expires": "Invalid Date",
-									"hostOnly": true,
-									"httpOnly": true,
-									"domain": "echo.getpostman.com",
-									"path": "/",
-									"secure": false,
-									"session": true,
-									"value": "s%3AryJV7v-PE4PuTjBK6nH5XOynQ4atuATV.n17KcaLhVmV8TBHNLwdwXgGR7lmqs3i478WPlTbRgZ4",
-									"key": "sails.sid"
-								}
-							],
-							"body": "{\"status\":\"pass\",\"message\":\"Hawk Authentication successful\"}"
-						}
-					]
-				},
-				{
 					"name": "OAuth1.0 (verify signature)",
 					"event": [
 						{
@@ -1274,7 +1053,7 @@
 									"    pm.response.to.have.jsonBody('status', 'pass');",
 									"});"
 								],
-								"id": "ca9768af-83f1-433e-ba81-c90ff6c86e99"
+								"id": "5f910b6c-9d14-493a-97ee-5b8ccaf58429"
 							}
 						}
 					],
@@ -1610,7 +1389,7 @@
 									"    }",
 									"});"
 								],
-								"id": "b89de68f-3e8a-4b8c-9eb1-c3c3158b4223"
+								"id": "1a73a440-c51e-4c58-9044-f1d9ae168b9f"
 							}
 						}
 					],
@@ -1757,7 +1536,7 @@
 									"    pm.response.to.have.jsonBody('cookies.foo2', 'bar2');",
 									"});"
 								],
-								"id": "2260ba2d-e6a7-4651-a9c3-62ffa95086fe"
+								"id": "f93c90ae-0465-49ee-ade9-6eab053d05ee"
 							}
 						}
 					],
@@ -1900,7 +1679,7 @@
 									"    }",
 									"});"
 								],
-								"id": "690e78f1-1e52-43e5-936a-373d2c1ed29c"
+								"id": "a4ba682d-9dbe-40bb-8305-f0280ecc3531"
 							}
 						}
 					],
@@ -2050,7 +1829,7 @@
 									"    pm.response.to.have.jsonBody('status', Number(_.get(pm.request, 'url.path[1]')));",
 									"});"
 								],
-								"id": "03ad0e5c-5f54-4368-8a0f-45d6563dd067"
+								"id": "28c30405-c996-452e-94a0-49ac0d85e088"
 							}
 						}
 					],
@@ -2234,7 +2013,7 @@
 									"    pm.response.to.have.header('transfer-encoding', 'chunked');",
 									"});"
 								],
-								"id": "5a149308-dab9-4b89-9c9b-811e45438f7c"
+								"id": "ed684f76-0d3a-462b-8075-bf68d1bc20cb"
 							}
 						}
 					],
@@ -2283,7 +2062,7 @@
 									"    pm.expect(pm.response.responseTime).to.be.above(Number(_.get(pm.request, 'url.path[1]')));",
 									"});"
 								],
-								"id": "e8a94259-536f-49cf-b9db-aa89bcffb71a"
+								"id": "75ac81eb-c6d5-4305-a309-7b911686e087"
 							}
 						}
 					],
@@ -2436,7 +2215,7 @@
 									"    pm.response.to.have.header('transfer-encoding', 'chunked');",
 									"});"
 								],
-								"id": "cf1d34d5-66bf-482c-918d-eb5c748e2fb1"
+								"id": "ce995152-69da-4d2c-bd8f-e651d3d1bb82"
 							}
 						}
 					],
@@ -2456,102 +2235,6 @@
 							]
 						},
 						"description": "If a response of an endpoint requires to send data beyond the basic English / ASCII character set, the `charset` parameter in the `Content-Type` response header defines the character encoding policy.\n\nThis endpoint returns an `UTF8` character encoded response body with text in various languages such as Greek, Latin, East Asian, etc. Postman can interpret the character encoding and use appropriate methods to display the character set in responses."
-					},
-					"response": []
-				},
-				{
-					"name": "GZip Compressed Response",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"response is ok\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"response has valid json body\", function () {",
-									"    pm.response.to.have.jsonBody('gzipped', true);",
-									"});",
-									"",
-									"pm.test('response headers should indicate valid content encoding', function  () {",
-									"    pm.response.to.have.header('content-encoding', 'gzip')",
-									"        .and.have.header('content-type', 'application/json');",
-									"});",
-									"",
-									"pm.test('requesting http client should accept compressed response', function () {",
-									"    pm.expect(pm.response.json()).to.have.nested.property('headers.accept-encoding')",
-									"        .and.to.match(/.*gzip.*/);",
-									"});"
-								],
-								"id": "c9b3ff16-ed28-4469-ae68-8675aae6c3f1"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://postman-echo.com/gzip",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"gzip"
-							]
-						},
-						"description": "This endpoint returns the response using [gzip compression algoritm](https://en.wikipedia.org/wiki/Gzip).\nThe uncompressed response is a JSON string containing the details of the request sent by the client. For this endpoint to work, one should request with `Accept-encoding` header containing `gzip` as part of its value. Postman supports gzip, deflate and SDCH decoding and automatically sends them as part of the request.\n\nHTTP Compression allows the server to send responses in a compressed format, which is uncompressed by the client before processing. This reduces network bandwidth consumption at the cost of increase in CPU usage.\nTo know more about this, refer the [HTTP Compression](https://en.wikipedia.org/wiki/HTTP_compression) wikipedia article."
-					},
-					"response": []
-				},
-				{
-					"name": "Deflate Compressed Response",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"response is ok\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"response has valid json body\", function () {",
-									"    pm.response.to.have.jsonBody('deflated', true);",
-									"});",
-									"",
-									"pm.test('response headers should indicate valid content encoding', function  () {",
-									"    pm.response.to.have.header('content-encoding', 'deflate')",
-									"        .and.have.header('content-type', 'application/json');",
-									"});",
-									"",
-									"pm.test('requesting http client should accept compressed response', function () {",
-									"    pm.expect(pm.response.json()).to.have.nested.property('headers.accept-encoding')",
-									"        .and.to.match(/.*deflate.*/);",
-									"});"
-								],
-								"id": "c6c8ee1f-73c3-41d3-b68c-9b9e52b068ed"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://postman-echo.com/deflate",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"deflate"
-							]
-						},
-						"description": "This endpoint returns the response using [deflate compression algoritm](https://en.wikipedia.org/wiki/DEFLATE). \nThe uncompressed response is a JSON string containing the details of the request sent by the client. For this endpoint to work, one should request with `Accept-encoding` header containing `deflate` as part of its value. Postman supports gzip, deflate and SDCH decoding and automatically sends them as part of the request.\n\nHTTP Compression allows the server to send responses in a compressed format, which is uncompressed by the client before processing. This reduces network bandwidth consumption at the cost of increase in CPU usage.\nTo know more about this, refer the [HTTP Compression](https://en.wikipedia.org/wiki/HTTP_compression) wikipedia article."
 					},
 					"response": []
 				},
@@ -2577,7 +2260,7 @@
 									"        .match(/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/);",
 									"});"
 								],
-								"id": "9c502027-bc4e-45dc-8031-cfe922ca63d0"
+								"id": "f80511c7-f020-4211-b790-ed027b9f5e73"
 							}
 						}
 					],
@@ -2621,7 +2304,7 @@
 									"    pm.expect(pm.response.text()).to.eql(pm.response.headers.get('date'))",
 									"});"
 								],
-								"id": "9973c5e6-b665-4799-a7bc-7333a6e33d42"
+								"id": "b9dc7d6f-c52e-47bd-b352-1351b4fa9bb7"
 							}
 						}
 					],
@@ -2781,7 +2464,7 @@
 									"    pm.response.to.have.jsonBody('valid', true);",
 									"});"
 								],
-								"id": "1a1ea418-13b7-4506-b797-2eac741ab0f2"
+								"id": "daa75bac-5346-4fa6-9831-322cb3257350"
 							}
 						}
 					],
@@ -2809,126 +2492,6 @@
 						"description": "A simple `GET` request to `/time/valid` to determine the validity of the timestamp, (current by default).\nThis endpoint accepts `timestamp`, `locale`, `format`, and `strict` query parameters to construct the date time instance to check against.\n\nResponses are provided in JSON format, with a valid key to indicate the result. The response code is `200`.\n\n```\n{\n  valid: true/false\n}\n```"
 					},
 					"response": [
-						{
-							"name": "Valid Timestamp",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://postman-echo.com/time/valid?timestamp=2016-10-10",
-									"protocol": "https",
-									"host": [
-										"postman-echo",
-										"com"
-									],
-									"path": [
-										"time",
-										"valid"
-									],
-									"query": [
-										{
-											"key": "timestamp",
-											"value": "2016-10-10"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "",
-									"name": "Access-Control-Allow-Credentials",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "",
-									"name": "Access-Control-Allow-Headers",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "",
-									"name": "Access-Control-Allow-Methods",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "",
-									"name": "Access-Control-Allow-Origin",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "",
-									"name": "Access-Control-Expose-Headers",
-									"description": ""
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": ""
-								},
-								{
-									"key": "Content-Length",
-									"value": "14",
-									"name": "Content-Length",
-									"description": ""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": ""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 11 Jan 2017 10:27:33 GMT",
-									"name": "Date",
-									"description": ""
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"e-OYN7L87J1Ba9oy5mJE2kcA\"",
-									"name": "ETag",
-									"description": ""
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.10.1",
-									"name": "Server",
-									"description": ""
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": ""
-								},
-								{
-									"key": "set-cookie",
-									"value": "sails.sid=s%3AdDGZPe1CZw4mAxGVCHr6RfCADCAwquXa.F5MEm5LJad30JHrSwGGoyWLn2OAAGdvUM7kDtzNfdFI; Path=/; HttpOnly",
-									"name": "set-cookie",
-									"description": ""
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date",
-									"httpOnly": true,
-									"domain": "postman-echo.com",
-									"path": "/",
-									"secure": false,
-									"value": "s%3AdDGZPe1CZw4mAxGVCHr6RfCADCAwquXa.F5MEm5LJad30JHrSwGGoyWLn2OAAGdvUM7kDtzNfdFI",
-									"key": "sails.sid"
-								}
-							],
-							"body": "{\"valid\":true}"
-						},
 						{
 							"name": "Invalid Timestamp",
 							"originalRequest": {
@@ -3048,6 +2611,126 @@
 								}
 							],
 							"body": "{\"valid\":false}"
+						},
+						{
+							"name": "Valid Timestamp",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://postman-echo.com/time/valid?timestamp=2016-10-10",
+									"protocol": "https",
+									"host": [
+										"postman-echo",
+										"com"
+									],
+									"path": [
+										"time",
+										"valid"
+									],
+									"query": [
+										{
+											"key": "timestamp",
+											"value": "2016-10-10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "",
+									"name": "Access-Control-Allow-Headers",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Length",
+									"value": "14",
+									"name": "Content-Length",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Jan 2017 10:27:33 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e-OYN7L87J1Ba9oy5mJE2kcA\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.10.1",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "set-cookie",
+									"value": "sails.sid=s%3AdDGZPe1CZw4mAxGVCHr6RfCADCAwquXa.F5MEm5LJad30JHrSwGGoyWLn2OAAGdvUM7kDtzNfdFI; Path=/; HttpOnly",
+									"name": "set-cookie",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "postman-echo.com",
+									"path": "/",
+									"secure": false,
+									"value": "s%3AdDGZPe1CZw4mAxGVCHr6RfCADCAwquXa.F5MEm5LJad30JHrSwGGoyWLn2OAAGdvUM7kDtzNfdFI",
+									"key": "sails.sid"
+								}
+							],
+							"body": "{\"valid\":true}"
 						}
 					]
 				},
@@ -3067,7 +2750,7 @@
 									"    pm.response.to.have.jsonBody('format', '20');",
 									"});"
 								],
-								"id": "1368da61-b551-4be1-a800-6bbf34ff9e0b"
+								"id": "4ce7d425-0ef5-44ce-9f65-0355ee3540b5"
 							}
 						}
 					],
@@ -3116,7 +2799,7 @@
 									"    pm.response.to.have.jsonBody('unit', 1);",
 									"});"
 								],
-								"id": "3c4e8e71-694c-4c11-adf3-8fab46362876"
+								"id": "2fe564dc-b016-46ee-b7f2-3baaae49317b"
 							}
 						}
 					],
@@ -3165,7 +2848,7 @@
 									"    pm.response.to.have.jsonBody('sum', 'Sat Oct 10 2116 00:00:00 GMT+0000');",
 									"});"
 								],
-								"id": "4a4ba9e4-8bcb-4b7b-9234-69ddf9cc5a14"
+								"id": "08b8aa94-0f1b-4fd7-b4f7-33c71075de9c"
 							}
 						}
 					],
@@ -3214,7 +2897,7 @@
 									"    pm.response.to.have.jsonBody('difference', 'Mon Oct 10 1966 00:00:00 GMT+0000');",
 									"});"
 								],
-								"id": "9b10f6ed-8d39-48bf-84b7-ad5b3f86b646"
+								"id": "55a10859-2134-4b6d-91f8-078e1c55f4de"
 							}
 						}
 					],
@@ -3263,7 +2946,7 @@
 									"    pm.response.to.have.jsonBody('start', 'Sat Oct 01 2016 00:00:00 GMT+0000');",
 									"});"
 								],
-								"id": "f85f7d82-0ae9-426f-bd76-1c720a5775e8"
+								"id": "a3a59950-3020-4ef0-8d6e-92da59e86fb6"
 							}
 						}
 					],
@@ -3321,7 +3004,7 @@
 									"    });",
 									"});"
 								],
-								"id": "bdf85e28-1528-4506-9cf6-30ed3d539bef"
+								"id": "c28209cc-3892-4c96-b4d2-fac1970241e2"
 							}
 						}
 					],
@@ -3366,7 +3049,7 @@
 									"    pm.response.to.have.jsonBody('before', true);",
 									"});"
 								],
-								"id": "b6e92982-e30d-4369-94b5-c2c7a39f2868"
+								"id": "7c897456-a8f0-4664-97b1-e16ea4b11d8f"
 							}
 						}
 					],
@@ -3415,7 +3098,7 @@
 									"    pm.response.to.have.jsonBody('after', false);",
 									"});"
 								],
-								"id": "7db2f366-372b-4221-8467-9934b837a92c"
+								"id": "b982a8f5-a2ec-40cc-97cb-d4661b169ab5"
 							}
 						}
 					],
@@ -3464,7 +3147,7 @@
 									"    pm.response.to.have.jsonBody('between', false);",
 									"});"
 								],
-								"id": "4a530658-a13b-4ead-a01d-68e8dbfa2b0a"
+								"id": "7d52c37d-b645-436b-b4cf-41e93e837279"
 							}
 						}
 					],
@@ -3517,7 +3200,7 @@
 									"    pm.response.to.have.jsonBody('leap', true);",
 									"});"
 								],
-								"id": "f83a5d54-76c3-4c9e-a0bb-b88a7d393220"
+								"id": "fe1f88a0-8ed6-4c62-a224-5d3ffdb97573"
 							}
 						}
 					],
@@ -3551,413 +3234,6 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Utilities / Postman Collection",
-			"item": [
-				{
-					"name": "Transform collection from format v1 to v2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"response is ok\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"response has almost valid items\", function () {",
-									"    pm.response.to.have.jsonBody('info.schema', 'https://schema.getpostman.com/json/collection/v2.0.0/collection.json')",
-									"        .and.to.have.jsonBody('item[0].name', 'A simple GET request')",
-									"        .and.to.have.jsonBody('item[1].name', 'A simple POST request');",
-									"});"
-								],
-								"id": "4fe8e1ba-be01-498b-a9eb-1292efcc483c"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"id\": \"7875be4b-917d-4aff-8cc4-5606c36bf418\",\n  \"name\": \"Sample Postman Collection\",\n  \"description\": \"A sample collection to demonstrate collections as a set of related requests\",\n  \"order\": [\n    \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n    \"141ba274-cc50-4377-a59c-e080066f375e\"\n  ],\n  \"folders\": [],\n  \"requests\": [\n    {\n      \"id\": \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n      \"name\": \"A simple GET request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"GET\",\n      \"headers\": \"\",\n      \"data\": [],\n      \"rawModeData\": \"\",\n      \"tests\": \"tests['response code is 200'] = (responseCode.code === 200);\",\n      \"preRequestScript\": \"\",\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\"\n    },\n    {\n      \"id\": \"141ba274-cc50-4377-a59c-e080066f375e\",\n      \"name\": \"A simple POST request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: text/plain\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\",\n      \"url\": \"https://postman-echo.com/post\"\n    }\n  ]\n}"
-						},
-						"url": {
-							"raw": "https://postman-echo.com/transform/collection?from=1&to=2",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"transform",
-								"collection"
-							],
-							"query": [
-								{
-									"key": "from",
-									"value": "1"
-								},
-								{
-									"key": "to",
-									"value": "2"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Sample v2 Response",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": "The mime type of this content"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id\": \"7875be4b-917d-4aff-8cc4-5606c36bf418\",\n  \"name\": \"Sample Postman Collection\",\n  \"description\": \"A sample collection to demonstrate collections as a set of related requests\",\n  \"order\": [\n    \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n    \"141ba274-cc50-4377-a59c-e080066f375e\",\n    \"4511ca8b-0bc7-430f-b894-a7ec1036f322\"\n  ],\n  \"folders\": [],\n  \"requests\": [\n    {\n      \"id\": \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n      \"name\": \"A simple GET request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"GET\",\n      \"headers\": \"\",\n      \"data\": [],\n      \"rawModeData\": \"\",\n      \"tests\": \"tests['response code is 200'] = (responseCode.code === 200);\",\n      \"preRequestScript\": \"\",\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\"\n    },\n    {\n      \"id\": \"141ba274-cc50-4377-a59c-e080066f375e\",\n      \"name\": \"A simple POST request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: text/plain\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\",\n      \"url\": \"https://postman-echo.com/post\"\n    },\n    {\n      \"id\": \"4511ca8b-0bc7-430f-b894-a7ec1036f322\",\n      \"name\": \"A simple POST request with JSON body\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: application/json\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\",\n      \"url\": \"https://postman-echo.com/post\"\n    }\n  ]\n}"
-								},
-								"url": {
-									"raw": "https://postman-echo.com/transform/collection?from=1&to=2",
-									"protocol": "https",
-									"host": [
-										"postman-echo",
-										"com"
-									],
-									"path": [
-										"transform",
-										"collection"
-									],
-									"query": [
-										{
-											"key": "from",
-											"value": "1"
-										},
-										{
-											"key": "to",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "",
-									"name": "Access-Control-Allow-Credentials",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "",
-									"name": "Access-Control-Allow-Headers",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "",
-									"name": "Access-Control-Allow-Methods",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "",
-									"name": "Access-Control-Allow-Origin",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "",
-									"name": "Access-Control-Expose-Headers",
-									"description": ""
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": ""
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": ""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": ""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 11 Jan 2017 10:41:32 GMT",
-									"name": "Date",
-									"description": ""
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"4cc-7P727Clhlrl9+b1/vneniw\"",
-									"name": "ETag",
-									"description": ""
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.10.1",
-									"name": "Server",
-									"description": ""
-								},
-								{
-									"key": "Vary",
-									"value": "X-HTTP-Method-Override, Accept-Encoding",
-									"name": "Vary",
-									"description": ""
-								},
-								{
-									"key": "set-cookie",
-									"value": "sails.sid=s%3AHtnQ1hlPxoj7wZahoNkcjN-aw9nQL0fc.KSyfLbEKhv1Lt3LvH13Ogjv9ENZgsBBSM6V8Y7TqVOU; Path=/; HttpOnly",
-									"name": "set-cookie",
-									"description": ""
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked",
-									"name": "transfer-encoding",
-									"description": ""
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date",
-									"httpOnly": true,
-									"domain": "postman-echo.com",
-									"path": "/",
-									"secure": false,
-									"value": "s%3AHtnQ1hlPxoj7wZahoNkcjN-aw9nQL0fc.KSyfLbEKhv1Lt3LvH13Ogjv9ENZgsBBSM6V8Y7TqVOU",
-									"key": "sails.sid"
-								}
-							],
-							"body": "{\"variables\":[],\"info\":{\"name\":\"Sample Postman Collection\",\"_postman_id\":\"7875be4b-917d-4aff-8cc4-5606c36bf418\",\"description\":\"A sample collection to demonstrate collections as a set of related requests\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\"},\"item\":[{\"name\":\"A simple GET request\",\"event\":[{\"listen\":\"test\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"tests['response code is 200'] = (responseCode.code === 200);\"]}}],\"request\":{\"url\":\"https://postman-echo.com/get?source=newman-sample-github-collection\",\"method\":\"GET\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"\"}},\"response\":[]},{\"name\":\"A simple POST request\",\"request\":{\"url\":\"https://postman-echo.com/post\",\"method\":\"POST\",\"header\":[{\"key\":\"Content-Type\",\"value\":\"text/plain\",\"description\":\"\"}],\"body\":{\"mode\":\"raw\",\"raw\":\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\"}},\"response\":[]},{\"name\":\"A simple POST request with JSON body\",\"request\":{\"url\":\"https://postman-echo.com/post\",\"method\":\"POST\",\"header\":[{\"key\":\"Content-Type\",\"value\":\"application/json\",\"description\":\"\"}],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\"}},\"response\":[]}]}"
-						}
-					]
-				},
-				{
-					"name": "Transform collection from format v2 to v1",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"response is ok\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"response has almost valid items\", function () {",
-									"    pm.response.to.have.jsonBody('folders', [])",
-									"        .and.to.have.jsonBody('order')",
-									"        .and.to.have.jsonBody('requests[0].name', 'A simple GET request')",
-									"        .and.to.have.jsonBody('requests[1].name', 'A simple POST request');",
-									"});"
-								],
-								"id": "54af57d0-a998-469c-a78c-3e313fd69161"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"info\": {\n    \"name\": \"Sample Postman Collection\",\n    \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n    \"description\": \"A sample collection to demonstrate collections as a set of related requests\"\n  },\n\n  \"item\": [{\n    \"name\": \"A simple GET request\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\",\n      \"method\": \"GET\"\n    }\n  }, {\n    \"name\": \"A simple POST request\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"text/plain\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\"\n      }\n    }\n  }]\n}"
-						},
-						"url": {
-							"raw": "https://postman-echo.com/transform/collection?from=2&to=1",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"transform",
-								"collection"
-							],
-							"query": [
-								{
-									"key": "from",
-									"value": "2"
-								},
-								{
-									"key": "to",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Sample v1 Response",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": "The mime type of this content"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"info\": {\n    \"name\": \"Sample Postman Collection\",\n    \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n    \"description\": \"A sample collection to demonstrate collections as a set of related requests\"\n  },\n\n  \"item\": [{\n    \"name\": \"A simple GET request\",\n    \"event\": [{\n      \"listen\": \"test\",\n      \"script\": {\n        \"type\": \"text/javascript\",\n        \"exec\": [\"tests['response code is 200'] = (responseCode.code === 200);\"]\n      }\n    }],\n    \"request\": {\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\",\n      \"method\": \"GET\"\n    }\n  }, {\n    \"name\": \"A simple POST request\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"text/plain\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\"\n      }\n    }\n  }, {\n    \"name\": \"A simple POST request with JSON body\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"application/json\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\"\n      }\n    }\n  }]\n}"
-								},
-								"url": {
-									"raw": "https://postman-echo.com/transform/collection?from=2&to=1",
-									"protocol": "https",
-									"host": [
-										"postman-echo",
-										"com"
-									],
-									"path": [
-										"transform",
-										"collection"
-									],
-									"query": [
-										{
-											"key": "from",
-											"value": "2"
-										},
-										{
-											"key": "to",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "",
-									"name": "Access-Control-Allow-Credentials",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "",
-									"name": "Access-Control-Allow-Headers",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "",
-									"name": "Access-Control-Allow-Methods",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "",
-									"name": "Access-Control-Allow-Origin",
-									"description": ""
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "",
-									"name": "Access-Control-Expose-Headers",
-									"description": ""
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": ""
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": ""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": ""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 11 Jan 2017 10:38:42 GMT",
-									"name": "Date",
-									"description": ""
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"569-P9uLZEIyoPfMmQ+U0mTO1A\"",
-									"name": "ETag",
-									"description": ""
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.10.1",
-									"name": "Server",
-									"description": ""
-								},
-								{
-									"key": "Vary",
-									"value": "X-HTTP-Method-Override, Accept-Encoding",
-									"name": "Vary",
-									"description": ""
-								},
-								{
-									"key": "set-cookie",
-									"value": "sails.sid=s%3A55y5Ll7HpTzt_hKuw6N54k4N04ilmMdn.uCPCHttP5DmI%2BdBw2I9NZL55lFFOzz4XxS4qAHv47gI; Path=/; HttpOnly",
-									"name": "set-cookie",
-									"description": ""
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked",
-									"name": "transfer-encoding",
-									"description": ""
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date",
-									"httpOnly": true,
-									"domain": "postman-echo.com",
-									"path": "/",
-									"secure": false,
-									"value": "s%3A55y5Ll7HpTzt_hKuw6N54k4N04ilmMdn.uCPCHttP5DmI%2BdBw2I9NZL55lFFOzz4XxS4qAHv47gI",
-									"key": "sails.sid"
-								}
-							],
-							"body": "{\"id\":\"0c42230c-c8e4-4ca0-a4aa-d393971de8b8\",\"name\":\"Sample Postman Collection\",\"description\":\"A sample collection to demonstrate collections as a set of related requests\",\"order\":[\"3d04ed83-dc1e-40ec-923c-16aa92509e50\",\"e02f8160-fb41-4633-be80-cc7d701e85b4\",\"77bd6d4d-1060-4927-aa5c-dcdba7f750cf\"],\"folders\":[],\"requests\":[{\"id\":\"3d04ed83-dc1e-40ec-923c-16aa92509e50\",\"name\":\"A simple GET request\",\"collectionId\":\"1dd68aff-a3fa-4f52-904f-5b75053bc9d9\",\"method\":\"GET\",\"headers\":\"\",\"data\":[],\"rawModeData\":\"\",\"tests\":\"tests['response code is 200'] = (responseCode.code === 200);\",\"preRequestScript\":\"\",\"url\":\"https://postman-echo.com/get?source=newman-sample-github-collection\"},{\"id\":\"e02f8160-fb41-4633-be80-cc7d701e85b4\",\"name\":\"A simple POST request\",\"collectionId\":\"1dd68aff-a3fa-4f52-904f-5b75053bc9d9\",\"method\":\"POST\",\"headers\":\"Content-Type: text/plain\",\"dataMode\":\"raw\",\"data\":[],\"rawModeData\":\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\",\"url\":\"https://postman-echo.com/post\"},{\"id\":\"77bd6d4d-1060-4927-aa5c-dcdba7f750cf\",\"name\":\"A simple POST request with JSON body\",\"collectionId\":\"1dd68aff-a3fa-4f52-904f-5b75053bc9d9\",\"method\":\"POST\",\"headers\":\"Content-Type: application/json\",\"dataMode\":\"raw\",\"data\":[],\"rawModeData\":\"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\",\"url\":\"https://postman-echo.com/post\"}]}"
-						}
-					]
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
 			"name": "Auth: Digest",
 			"item": [
 				{
@@ -3982,7 +3258,7 @@
 									"postman.setGlobalVariable('echo_digest_realm', realm);",
 									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
 								],
-								"id": "88c2f2df-88a4-4d96-9ce0-f57072d7f658"
+								"id": "76073c86-bd88-4cb6-870f-3753eaa45420"
 							}
 						}
 					],
